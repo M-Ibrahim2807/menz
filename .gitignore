@@ -1,0 +1,32 @@
+# Database
+*.sqlite3
+*.db
+/db.sqlite3
+backend/db.sqlite3
+
+# Environment variables
+.env
+.env.local
+
+# Virtual Environment
+venv/
+.env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django
+*.log
+local_settings.py
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Static files
+/staticfiles/
+/media/
