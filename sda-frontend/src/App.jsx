@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import { AuthProvider } from './services/AuthService';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
+import ProductList from './components/products/ProductList';
+import ProductDetail from './components/products/ProductDetail';
+import About from './components/pages/About';
+import Cart from './components/pages/Cart';
+import Wishlist from './components/pages/Wishlist';
+import Orders from './components/pages/Orders';
+import OrderDetail from './components/pages/OrderDetail';
+import OrderHistory from './components/pages/OrderHistory';
+import Profile from './components/pages/Profile';
+import EditProfile from './components/pages/EditProfile';
+import './style/global.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <AuthProvider>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<ProductList />} />
+              <Route path="/category/:category" element={<ProductList />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/edit" element={<EditProfile />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/orders" element={<Orders />} />
+              <Route path="/order/:id" element={<OrderDetail />} />
+              <Route path="/orders/history" element={<OrderHistory />} />
+            </Routes>
+          </Layout>
+        </AuthProvider>
+      </Router>
+    );
+  }
 }
 
-export default App
+export default App;

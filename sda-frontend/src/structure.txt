@@ -1,0 +1,26 @@
+.
+├── App.css
+├── App.jsx
+├── assets
+│   └── react.svg
+├── components
+│   ├── auth
+│   │   ├── Login.jsx
+│   │   └── Register.jsx
+│   └── layout
+│       ├── Footer.jsx
+│       ├── Header.jsx
+│       └── Layout.jsx
+├── index.css
+├── main.jsx
+├── models
+│   ├── BaseModel.js
+│   └── user.js
+├── services
+│   ├── AuthService.js
+│   └── BaseService.js
+├── structure.txt
+└── style
+    └── global.css
+
+8 directories, 16 files
