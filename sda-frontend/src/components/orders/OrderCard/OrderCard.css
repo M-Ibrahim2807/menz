@@ -1,0 +1,126 @@
+.order-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.order-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.order-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.order-id {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+.order-status {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 4px 12px;
+  background: #f5f5f5;
+  border-radius: 20px;
+}
+
+.order-card-body {
+  margin-bottom: 16px;
+}
+
+.order-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.order-info-row .label {
+  color: #666;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.order-info-row .label::after {
+  content: " ";
+}
+
+.order-info-row .value {
+  color: #333;
+  font-weight: 600;
+}
+
+.order-info-row .value.paid {
+  color: #4caf50;
+}
+
+.order-info-row .value.pending {
+  color: #ff9800;
+}
+
+.order-card-footer {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-view {
+  flex: 1;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-view:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Verification badges */
+.order-status {
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.order-status.verification-approved { background: linear-gradient(135deg,#10b981 0%,#059669 100%); color:#fff }
+.order-status.verification-rejected { background: linear-gradient(135deg,#ef4444 0%,#dc2626 100%); color:#fff }
+.order-status.verification-waiting { background: linear-gradient(135deg,#f59e0b 0%,#d97706 100%); color:#fff }
+
+/* Inline value styles */
+.value.verification-approved { color: #059669; font-weight: 700 }
+.value.verification-rejected { color: #c02020; font-weight: 700 }
+.value.verification-waiting { color: #b45309; font-weight: 700 }
+
+/* Track status */
+.value.track-shipping { color: #0ea5a4; font-weight: 700 }
+.value.track-- { color: #777 }
+
+/* Button variants matching verification */
+.btn-view.btn-approved { background: linear-gradient(135deg,#10b981 0%,#059669 100%); box-shadow: 0 8px 24px rgba(16,185,129,0.12) }
+.btn-view.btn-approved:hover { background: linear-gradient(135deg,#059669 0%,#047857 100%) }
+.btn-view.btn-waiting { background: linear-gradient(135deg,#f59e0b 0%,#d97706 100%); box-shadow: 0 8px 24px rgba(245,158,11,0.12) }
+.btn-view.btn-waiting:hover { background: linear-gradient(135deg,#d97706 0%,#b45309 100%) }
+.btn-view.btn-rejected { background: linear-gradient(135deg,#ef4444 0%,#dc2626 100%); box-shadow: 0 8px 24px rgba(239,68,68,0.12) }
+.btn-view.btn-rejected:hover { background: linear-gradient(135deg,#dc2626 0%,#b91c1c 100%) }
+

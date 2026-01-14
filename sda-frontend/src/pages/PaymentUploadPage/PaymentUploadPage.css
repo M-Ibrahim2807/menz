@@ -1,0 +1,102 @@
+.payment-upload-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.payment-card {
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.payment-card h1 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  color: #222;
+}
+
+.subtitle {
+  margin: 0 0 20px 0;
+  color: #666;
+}
+
+.summary {
+  margin-bottom: 18px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-weight: 600;
+}
+
+.error-box {
+  background: #fff0f0;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.success-box {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.file-input-label {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.file-input-label input[type="file"] {
+  display: none;
+}
+
+.file-chooser {
+  display: inline-block;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.selected-list {
+  margin-bottom: 12px;
+}
+
+.file-row {
+  padding: 8px 12px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn-upload {
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.btn-cancel {
+  padding: 12px 18px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+}

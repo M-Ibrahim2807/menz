@@ -1,0 +1,84 @@
+/* ProductReviews CSS - Beautiful Review Display */
+
+.product-reviews-container {
+  margin-bottom: 32px;
+}
+
+.product-reviews-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 28px 0;
+  padding-bottom: 16px;
+  border-bottom: 3px solid #14213d;
+  display: inline-block;
+}
+
+.no-reviews {
+  text-align: center;
+  padding: 40px 20px;
+  color: #64748b;
+  font-size: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 2px dashed #cbd5e1;
+}
+
+.reviews-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-item {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(20, 33, 61, 0.04);
+}
+
+.review-item:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 24px rgba(20, 33, 61, 0.12);
+  transform: translateY(-2px);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.review-user {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 15px;
+}
+
+.review-rating {
+  color: #f59e0b;
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.review-date {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-left: auto;
+  font-style: italic;
+}
+
+.review-comment {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 15px;
+  word-break: break-word;
+}

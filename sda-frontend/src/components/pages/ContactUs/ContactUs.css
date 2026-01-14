@@ -1,0 +1,270 @@
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  color: #333333;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  font-size: 2.8rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  color: #666666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contact Top Section - Email & Phone */
+.contact-top-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.top-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 2px solid #1a3a52;
+  border-left: 5px solid #d4af37;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.top-card:hover {
+  box-shadow: 0 8px 20px rgba(26, 58, 82, 0.15);
+  transform: translateY(-5px);
+}
+
+.top-card h3 {
+  color: #000000;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* Contact Content - How Can We Help */
+.contact-content {
+  margin-bottom: 4rem;
+}
+
+.contact-info-section {
+  width: 100%;
+}
+
+.contact-info-section h2 {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.info-card {
+  background-color: #f8f8f8;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.info-card h3 {
+  color: #000000;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.info-card.social {
+  background: linear-gradient(135deg, #1a3a52 0%, #0f2637 100%);
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.info-card.social h3 {
+  color: #ffffff;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 1rem 1.2rem;
+  background-color: #ffffff;
+  color: #1a3a52 !important;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.social-btn:hover {
+  background-color: #d4af37;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(26, 58, 82, 0.3);
+}
+
+.info-card.faq {
+  background-color: #ffffff;
+  border: 2.5px solid #d4af37;
+}
+
+.faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.faq-item {
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.faq-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.faq-item strong {
+  color: #1a3a52;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.faq-item p {
+  color: #666666;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Contact Form Bottom Section */
+/* Removed contact form styling */
+
+.info-text {
+  color: #1a3a52;
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.info-text a {
+  color: #1a3a52;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.info-text a:hover {
+  color: #d4af37;
+  border-bottom-color: #d4af37;
+}
+
+.info-subtitle {
+  color: #666666;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-top-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 2rem 1rem;
+  }
+
+  .contact-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+
+  .contact-header p {
+    font-size: 1rem;
+  }
+
+  .contact-top-section {
+    margin-bottom: 3rem;
+  }
+
+  .top-card {
+    padding: 2rem;
+  }
+
+  .top-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .contact-info-section h2,
+  .form-wrapper h2 {
+    font-size: 1.4rem;
+  }
+
+  .submit-btn {
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+  }
+
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+
+  .info-text {
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
+}

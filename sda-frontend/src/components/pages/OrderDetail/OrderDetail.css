@@ -1,0 +1,10 @@
+.order-detail-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.order-detail-container h1 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}

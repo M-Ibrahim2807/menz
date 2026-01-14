@@ -1,0 +1,163 @@
+/* AddReview CSS - Beautiful Review Form */
+
+.add-review-container {
+  margin-bottom: 32px;
+}
+
+.add-review-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 28px 0;
+  padding-bottom: 16px;
+  border-bottom: 3px solid #14213d;
+  display: inline-block;
+}
+
+.review-form {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 4px 12px rgba(20, 33, 61, 0.06);
+}
+
+.review-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  color: #0f172a;
+  font-size: 15px;
+}
+
+.review-form select,
+.review-form textarea {
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.review-form select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2314213d' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.review-form select:hover,
+.review-form select:focus {
+  border-color: #14213d;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(20, 33, 61, 0.1);
+}
+
+.review-form textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+  color: #0f172a;
+}
+
+.review-form textarea:hover,
+.review-form textarea:focus {
+  border-color: #14213d;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(20, 33, 61, 0.1);
+}
+
+.review-form textarea::placeholder {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.review-form button {
+  padding: 14px 32px;
+  background: #14213d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(20, 33, 61, 0.15);
+  align-self: flex-start;
+}
+
+.review-form button:hover:not(:disabled) {
+  background: #1a237e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(20, 33, 61, 0.25);
+}
+
+.review-form button:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.review-form .error-text {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.review-form .success-text {
+  background: #dcfce7;
+  color: #166534;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border-left: 4px solid #22c55e;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .review-form {
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .review-form label {
+    font-size: 14px;
+  }
+
+  .review-form select,
+  .review-form textarea {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .review-form button {
+    padding: 12px 24px;
+    font-size: 14px;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-form {
+    padding: 16px;
+  }
+}

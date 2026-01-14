@@ -1,0 +1,283 @@
+.order-history-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.order-history-header {
+  margin-bottom: 2.5rem;
+}
+
+.order-history-header h1 {
+  font-size: 2.2rem;
+  color: #000000;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.order-history-header p {
+  font-size: 1rem;
+  color: #666666;
+  margin: 0;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.no-orders {
+  background: #f8f9fa;
+  border: 2px dashed #d0d0d0;
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.no-orders p {
+  font-size: 1.1rem;
+  color: #666666;
+  margin-bottom: 1.5rem;
+}
+
+.btn-continue-shopping {
+  background-color: #d4af37;
+  color: #000000;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-continue-shopping:hover {
+  background-color: #c9a227;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+}
+
+.orders-table-container {
+  overflow-x: auto;
+  background: #ffffff;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #d0d0d0;
+}
+
+.orders-table th {
+  padding: 1.2rem;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.orders-table tbody tr {
+  border-bottom: 1px solid #e8e8e8;
+  transition: background-color 0.3s ease;
+}
+
+.orders-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.orders-table td {
+  padding: 1.2rem;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+.order-id {
+  font-weight: 600;
+  color: #1a3a52;
+}
+
+.order-total {
+  font-weight: 600;
+  color: #d4af37;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.status-pending {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  border: 1px solid #d97706;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.status-pending:hover {
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+  transform: translateY(-1px);
+}
+
+.status-paid {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: 1px solid #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.status-paid:hover {
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
+}
+
+.status-processing {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.status-shipped {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: #ffffff;
+  border: 1px solid #0891b2;
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.status-delivered {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: #ffffff;
+  border: 1px solid #7c3aed;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.status-cancelled {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  border: 1px solid #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Map verification states to visual classes */
+.status-approved { background: linear-gradient(135deg,#10b981 0%,#059669 100%); color:#fff; border:1px solid #059669; box-shadow:0 4px 12px rgba(16,185,129,0.3) }
+.status-rejected { background: linear-gradient(135deg,#ef4444 0%,#dc2626 100%); color:#fff; border:1px solid #dc2626; box-shadow:0 4px 12px rgba(239,68,68,0.3) }
+.status-waiting { background: linear-gradient(135deg,#f59e0b 0%,#d97706 100%); color:#fff; border:1px solid #d97706; box-shadow:0 4px 12px rgba(245,158,11,0.3) }
+
+/* Track badge */
+.track-badge { display:inline-block; padding:0.35rem 0.7rem; border-radius:8px; font-weight:700 }
+.track-shipping { background: linear-gradient(135deg,#06b6d4 0%,#0891b2 100%); color:#fff; box-shadow:0 6px 18px rgba(6,182,212,0.12) }
+.track-- { color:#777; background:transparent }
+
+/* Paid Status Button */
+.btn-view.btn-paid {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: 1px solid #059669;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.btn-view.btn-paid:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+/* Pending Status Button */
+.btn-view.btn-pending {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: #ffffff;
+  border: 1px solid #d97706;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.btn-view.btn-pending:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.35);
+}
+
+.btn-view {
+  background-color: #6366f1;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-history-container {
+    padding: 2rem 1rem;
+  }
+
+  .order-history-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .orders-table {
+    font-size: 0.85rem;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 0.8rem;
+  }
+
+  .btn-view {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-history-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .order-history-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .orders-table-container {
+    border-radius: 8px;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-view {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.7rem;
+  }
+}
