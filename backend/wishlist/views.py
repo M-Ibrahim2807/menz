@@ -2,9 +2,10 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
+from django.contrib.contenttypes.models import ContentType
 
 from .models import Wishlist, WishlistItem
-from product.models import Product
+from product.models import ClothingProduct
 
 def get_user_wishlist(user):
     wishlist, created = Wishlist.objects.get_or_create(user=user)
@@ -24,15 +25,16 @@ def add_to_wishlist(request):
     product_id = request.data.get("product_id")
 
     try:
-        product = Product.objects.get(id=product_id)
-    except Product.DoesNotExist:
+        product = ClothingProduct.objects.get(id=product_id)
+    except ClothingProduct.DoesNotExist:
         return Response({"error": "Product not found"}, status=404)
 
     wishlist = get_user_wishlist(request.user)
+    content_type = ContentType.objects.get_for_model(ClothingProduct)
 
     # prevent duplicates
     item, created = WishlistItem.objects.get_or_create(
-        wishlist=wishlist, product=product
+        wishlist=wishlist, content_type=content_type, object_id=product.id
     )
 
     if not created:

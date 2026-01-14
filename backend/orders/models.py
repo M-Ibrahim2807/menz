@@ -1,7 +1,10 @@
 from django.db import models
 from django.conf import settings
-from product.models import Product
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+
 User = settings.AUTH_USER_MODEL
+
 class Order(models.Model):
     STATUS_CHOICES = (
         ('pending', 'Pending Payment'),
@@ -19,6 +22,8 @@ class Order(models.Model):
     total_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     shipping_address = models.TextField(blank=True, null=True)
     loyalty_points_earned = models.IntegerField(default=0)
+    # Track order status explicitly. Defaults to '-' meaning no tracking yet.
+    track_order_status = models.CharField(max_length=50, default='-')
 
     def calculate_total(self):
         total = sum(item.calculate_subtotal() for item in self.items.all())
@@ -32,7 +37,12 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
-    product = models.ForeignKey(Product, on_delete=models.PROTECT)
+
+    # Generic relation to any product type
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, null=True, blank=True)
+    object_id = models.PositiveIntegerField(null=True, blank=True)
+    product = GenericForeignKey('content_type', 'object_id')
+
     product_name = models.CharField(max_length=255)
     price_at_purchase = models.DecimalField(max_digits=12, decimal_places=2)
     quantity = models.PositiveIntegerField()
@@ -42,6 +52,7 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f"{self.product_name} x {self.quantity}"
+
 
 
 class RefundRequest(models.Model):
@@ -58,5 +69,6 @@ class RefundRequest(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=20, default='pending', choices=STATUS_CHOICES)
     admin_note = models.TextField(blank=True, null=True)
+
     def __str__(self):
         return f"Refund {self.id} for order {self.order.id} - {self.status}"

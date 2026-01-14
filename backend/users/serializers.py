@@ -3,26 +3,39 @@ from django.contrib.auth import authenticate
 from .models import User
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
-    password=serializers.CharField(write_only=True,min_length=6)
-    password_confirm=serializers.CharField(write_only=True,min_length=6)
+    password = serializers.CharField(write_only=True, min_length=6)
+    password_confirm = serializers.CharField(write_only=True, min_length=6)
+    phone = serializers.CharField(required=False, allow_blank=True)
+    address = serializers.CharField(required=False, allow_blank=True)
+    # Override username to skip validation
+    username = serializers.CharField(max_length=150, required=True, validators=[])
+    
     class Meta:
-        model=User
-        fields=['email','username','password','password_confirm','phone','address']
-    def validate(self,data):
-        if data['password']!=data['password_confirm']:
-            raise serializers.ValidationError("password dont match")
-        else:
-            return data
+        model = User
+        fields = ['email', 'username', 'password', 'password_confirm', 'phone', 'address']
+    
+    def validate_password(self, value):
+        if len(value) < 6:
+            raise serializers.ValidationError("Password must be at least 6 characters.")
+        return value
+    
+    def validate(self, data):
+        if data.get('password') != data.get('password_confirm'):
+            raise serializers.ValidationError({"password": "Passwords do not match"})
+        return data
         
-    def create(self,validated_data):
+    def create(self, validated_data):
         validated_data.pop('password_confirm')
-        user=User.objects.create_user(
+        password = validated_data.pop('password')
+        
+        user = User.objects.create_user(
             email=validated_data['email'],
             username=validated_data['username'],
-            password=validated_data['password'],
-            phone=validated_data['phone'],
-            address=validated_data['address']
-       )
+            password=password,
+            phone=validated_data.get('phone', ''),
+            address=validated_data.get('address', '')
+        )
+        
         return user
 
 
@@ -57,8 +70,11 @@ class UserLoginSerializer(serializers.Serializer):
         else:
             raise serializers.ValidationError('Must enter username/email and password')    
         return data
+
     
 class UserProfileSerializer(serializers.ModelSerializer):
-     class Meta:
+    
+    class Meta:
         model = User
-        fields = ['id', 'email', 'username', 'phone', 'address', 'user_type', 'date_joined']
+        fields = ['id', 'email', 'username', 'first_name', 'last_name', 'phone', 'address', 'user_type', 'date_joined']
+        read_only_fields = ['id', 'date_joined', 'user_type']

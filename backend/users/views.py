@@ -7,6 +7,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import login
 from .models import User
 from .serializers import UserRegistrationSerializer,UserLoginSerializer,UserProfileSerializer
+
 @api_view(['GET','POST'])
 def register_user(request):
     if request.method=="POST":
@@ -73,11 +74,11 @@ def login_user(request):
             'message': 'User login endpoint',
             'instructions': 'Send POST request with email and password to login'
         })
+
 # Create your views here.
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def profile_user(request):
-    
     serializer = UserProfileSerializer(request.user)
     return Response(serializer.data)
 
